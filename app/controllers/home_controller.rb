@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	def home
+	def index
 		last = Person.all.last
 		per = Finded.find_by! name: last.name
 		@category = last.category
