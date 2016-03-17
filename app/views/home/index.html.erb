@@ -71,8 +71,8 @@
              <script type="text/javascript">
 
                 $('#pos<%=count%>').easyPieChart({
-                          animate: @pp[count][2] * 100
-                      }).data('easyPieChart').update(@pp[count][2] * 100);
+                          animate: <%= @pp[count][2] %> * 100
+                      }).data('easyPieChart').update(<%= @pp[count][2] %> * 100);
 
 
               </script>
