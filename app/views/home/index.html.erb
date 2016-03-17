@@ -3,29 +3,27 @@
     <%= @str       %>
   <% else %>
         <% count = 0 %>
-        <% while count < @nbr %>
+        <% while count != @nbr %>
 
-            <% j = @pp[count] %>
-
-                 <% if j[0] == 1 %>
+                 <% if @pp[count][0] == 1 %>
 
                               <div class="card profile-view">
                                 <div class="pv-header <%=count%>">
-                                    <img src="<%= j[6]        %>" class="pv-main" alt="">
+                                    <img src="<%= @pp[count][6]        %>" class="pv-main" alt="">
                                 </div>
 
                                 <div class="pv-body">
-                                    <h2><%= j[3]           %></h2>
-                                    <small>Cette Personne a été reconnu avec un taux de <%= j[2]     %> %</small>
+                                    <h2><%= @pp[count][3]           %></h2>
+                                    <small>Cette Personne a été reconnu avec un taux de <%= @pp[count][2]     %> %</small>
 
                                     <ul class="pv-contact">
-                                        <li><i class="zmdi zmdi-pin"></i><%= j[1]      %></li>
-                                        <li><i class="zmdi zmdi-phone"></i><%= j[5]          %></li>
-                                        <li><i class="zmdi zmdi-broken-image"></i><%= j[2]     %> %</li>
+                                        <li><i class="zmdi zmdi-pin"></i><%= @pp[count][1]      %></li>
+                                        <li><i class="zmdi zmdi-phone"></i><%= @pp[count][5]          %></li>
+                                        <li><i class="zmdi zmdi-broken-image"></i><%= @pp[count][2]     %> %</li>
                                     </ul>
                                     
                                     <ul class="pv-follow">
-                                      <a href="<%= j[4]       %>">LinkedIN</a>
+                                      <a href="<%= @pp[count][4]       %>">LinkedIN</a>
                                     </ul>
                                     
                                 </div>
