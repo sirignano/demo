@@ -1,26 +1,51 @@
-<% if @a == 0      %>
-  <%= @str       %>
-<% else %>
+<div class="col-sm-4">
+  <% if @a == 0      %>
+    <%= @str       %>
+  <% else %>
+        <% @pp.each do |j| %>
 
-<div class="card profile-view">
-<div class="pv-header">
-    <img src="<%= @picture        %>" class="pv-main" alt="">
+                 <% if j["a"] == 1 %>
+
+                              <div class="card profile-view">
+                                <div class="pv-header">
+                                    <img src="<%= j["picture"]        %>" class="pv-main" alt="">
+                                </div>
+
+                                <div class="pv-body">
+                                    <h2><%= j["name"]           %></h2>
+                                    <small>Cette Personne a été reconnu avec un taux de <%= j["confidence"]     %> %</small>
+
+                                    <ul class="pv-contact">
+                                        <li><i class="zmdi zmdi-pin"></i><%= j["category"]      %></li>
+                                        <li><i class="zmdi zmdi-phone"></i><%= j["phone"]          %></li>
+                                        <li><i class="zmdi zmdi-broken-image"></i><%= j["confidence"]     %> %</li>
+                                    </ul>
+                                    
+                                    <ul class="pv-follow">
+                                      <a href="<%= j["linkedin"]       %>">LinkedIN</a>
+                                    </ul>
+                                    
+                                </div>
+                              </div>
+                <% else %>
+                            <div class="card profile-view">
+                                <div class="pv-header">
+                                    <img src="http://www.babelio.com/users/AVT_Unknown_340.gif" class="pv-main" alt="">
+                                </div>
+
+                                <div class="pv-body">
+                                    <h2><%= UNKNOWN           %></h2>
+                                    <small><%= @str2     %> %</small>
+
+                                    <ul class="pv-contact">
+                                    </ul>
+                                    
+                                    <ul class="pv-follow">
+                                    </ul>
+                                    
+                                </div>
+                              </div>
+                <% end %>
+        <% end %>
+  <% end %>
 </div>
-
-<div class="pv-body">
-    <h2><%= @name           %></h2>
-    <small>Cette Personne a été reconnu avec un taux de <%= @confidence     %> %</small>
-
-    <ul class="pv-contact">
-        <li><i class="zmdi zmdi-pin"></i><%= @category       %></li>
-        <li><i class="zmdi zmdi-phone"></i><%= @phone          %></li>
-        <li><i class="zmdi zmdi-broken-image"></i><%= @confidence     %> %</li>
-    </ul>
-    
-    <ul class="pv-follow">
-      <a href="<%= @linkedin       %>">LinkedIN</a>
-    </ul>
-    
-</div>
-
-<% end %>

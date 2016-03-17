@@ -1,17 +1,36 @@
 class HomeController < ApplicationController
 	def index
 		begin
-			last = Person.all.last
-			per = Finded.find_by! name: last.name
-			@category = last.category
-			@confidence = last.confidence
-			@name = last.name.tr("_", " ").upcase
-			@linkedin = per.linkedin
-			@phone = per.phone
-			@picture = ""
+			last = Person.all
+			@pp = []
+			k = 0
+			last.each do |o|
+				begin
+					per = Finded.find_by! name: o.name
+					@category = o.category
+					@confidence = o.confidence
+					@name = o.name.tr("_", " ").upcase
+					@linkedin = per.linkedin
+					@phone = per.phone
+					@picture = ""
+					@pp[k]["category"] = @category
+					@pp[k]["confidence"] = @confidence
+					@pp[k]["name"] = @name
+					@pp[k]["linkedin"] = @linkedin
+					@pp[k]["phone"] = @phone
+					@pp[k]["picture"] = @picture
+					@pp[k]["a"] = 0
+				rescue
+					@strs = "une personne non reconnu a été rencontré"
+					@pp[k]["a"] = 1
+
+					@a = 0
+				end
+				k += 1
+			end
 			@a = 1
 		rescue
-			@str = "une personne non reconnu a été rencontré"
+			@str = "une erreur non reconnu a été rencontré"
 			@a = 0
 		end
 	end
