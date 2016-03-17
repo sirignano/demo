@@ -1,10 +1,26 @@
 <% if @a == 0      %>
   <%= @str       %>
 <% else %>
-<%= @category       %>
-<%= @confidence     %>
-<%= @name           %>
-<%= @linkedin       %>
-<%= @phone          %>
-<%= @picture        %>
+
+<div class="card profile-view">
+<div class="pv-header">
+    <img src="<%= @picture        %>" class="pv-main" alt="">
+</div>
+
+<div class="pv-body">
+    <h2><%= @name           %></h2>
+    <small>Cette Personne a été reconnu avec un taux de <%= @confidence     %> %</small>
+
+    <ul class="pv-contact">
+        <li><i class="zmdi zmdi-pin"></i><%= @category       %></li>
+        <li><i class="zmdi zmdi-phone"></i><%= @phone          %></li>
+        <li><i class="zmdi zmdi-broken-image"></i><%= @confidence     %> %</li>
+    </ul>
+    
+    <ul class="pv-follow">
+      <a href="<%= @linkedin       %>">LinkedIN</a>
+    </ul>
+    
+</div>
+
 <% end %>
