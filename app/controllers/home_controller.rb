@@ -89,21 +89,21 @@ class HomeController < ApplicationController
 					@pp[k][6] = per.linkedin.split('|')[1]
 					render1 += '|'+'<div class="card profile-view">
                                 <div class="pv-header">
-                                    <img src="'+@pp[k][6]+'" class="pv-main" alt="">
+                                    <img src="'+per.linkedin.split('|')[1]+'" class="pv-main" alt="">
                                 </div>
 
                                 <div class="pv-body">
-                                    <h2> '+@pp[k][3]+' </h2>
-                                    <small>Cette Personne a été reconnu avec un taux de '+@pp[k][2]+'%</small>
+                                    <h2> '+o.name.tr("_", " ").upcase+' </h2>
+                                    <small>Cette Personne a été reconnu avec un taux de '+o.confidence+'%</small>
 
                                     <ul class="pv-contact">
-                                        <li><i class="zmdi zmdi-pin"></i> '+@pp[k][1]+'      </li>
-                                        <li><i class="zmdi zmdi-phone"></i> '+@pp[k][5]+'       </li>
-                                        <li><i class="zmdi zmdi-broken-image"></i> '+@pp[k][2]+'      %</li>
+                                        <li><i class="zmdi zmdi-pin"></i> '+o.category+'      </li>
+                                        <li><i class="zmdi zmdi-phone"></i> '+per.phone+'       </li>
+                                        <li><i class="zmdi zmdi-broken-image"></i> '+o.confidence+'      %</li>
                                     </ul>
                                     
                                     <ul class="pv-follow">
-                                      <a href="'+@pp[k][4]+'" target="_blanck">LinkedIN</a>
+                                      <a href="'+per.linkedin.split('|')[0]+'" target="_blanck">LinkedIN</a>
                                     </ul>
                                     
                                 </div>
