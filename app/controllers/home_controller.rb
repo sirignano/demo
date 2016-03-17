@@ -28,6 +28,7 @@ class HomeController < ApplicationController
 					@a = 0
 				end
 				k += 1
+				@nbr = k
 			end
 			@a = 1
 	end

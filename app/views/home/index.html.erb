@@ -3,6 +3,10 @@
     <%= @str       %>
   <% else %>
         <% @pp.each do |j| %>
+        <% @count = 0 %>
+        <% while @count < @nbr %>
+
+            <% j = @pp[@count] %>
 
                  <% if j[0] == 1 %>
 
@@ -46,6 +50,7 @@
                                 </div>
                               </div>
                 <% end %>
+          <% @count += 1 %>
         <% end %>
   <% end %>
 </div>
