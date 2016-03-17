@@ -13,17 +13,17 @@ class HomeController < ApplicationController
 					@linkedin = per.linkedin
 					@phone = per.phone
 					@picture = ""
-					@pp[k]["category"] = @category
-					@pp[k]["confidence"] = @confidence
-					@pp[k]["name"] = @name
-					@pp[k]["linkedin"] = @linkedin
-					@pp[k]["phone"] = @phone
-					@pp[k]["picture"] = @picture
-					@pp[k]["a"] = 0
+					@pp[k][0] = 0
+					@pp[k][1] = @category
+					@pp[k][2] = @confidence
+					@pp[k][3] = @name
+					@pp[k][4] = @linkedin
+					@pp[k][5] = @phone
+					@pp[k][6] = @picture
 				rescue
 					@strs = "une personne non reconnu a été rencontré"
 					@pp[k] = []
-					@pp[k]["a"] = 1
+					@pp[k][0] = 1
 
 					@a = 0
 				end
