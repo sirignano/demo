@@ -2,15 +2,15 @@
   <% if @a == 0      %>
     <%= @str       %>
   <% else %>
-        <% @count = 0 %>
-        <% while @count < @nbr %>
+        <% count = 0 %>
+        <% while count < @nbr %>
 
-            <% j = @pp[@count] %>
+            <% j = @pp[count] %>
 
                  <% if j[0] == 1 %>
 
                               <div class="card profile-view">
-                                <div class="pv-header">
+                                <div class="pv-header <%=@count%>">
                                     <img src="<%= j[6]        %>" class="pv-main" alt="">
                                 </div>
 
@@ -49,7 +49,7 @@
                                 </div>
                               </div>
                 <% end %>
-          <% @count += 1 %>
+          <% count += 1 %>
         <% end %>
   <% end %>
 </div>
