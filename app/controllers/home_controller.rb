@@ -69,7 +69,7 @@ class HomeController < ApplicationController
 			last = Person.all.order(created_at: :desc)
 			@pp = []
 			k = 0
-			render = ""
+			render1 = ""
 			last.each do |o|
 				@pp[k] = []
 				begin
@@ -110,7 +110,7 @@ class HomeController < ApplicationController
                               </div>'
 				rescue
 					@pp[k][0] = 1
-					render1 += '<div class="card profile-view">
+					render1 += '|'+'<div class="card profile-view">
                                 <div class="pv-header">
                                     <img src="http://www.babelio.com/users/AVT_Unknown_340.gif" class="pv-main" alt="">
                                 </div>
