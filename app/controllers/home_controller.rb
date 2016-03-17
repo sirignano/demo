@@ -135,7 +135,7 @@ class HomeController < ApplicationController
 			@strs = "une personne non reconnu a été rencontré"
 			@nbr = k
 			@a = 1
-			render render1
+			render plain: render1
 		end
 
 
