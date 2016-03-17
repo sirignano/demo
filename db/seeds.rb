@@ -28,7 +28,7 @@ a.linkedin = "https://www.linkedin.com/in/" + "julienbeaumont" + "|" + "https://
 a.save
 a = Finded.new
 a.name = "Marie-Ange_Boyomo"
-a.linkedin = "https://www.linkedin.com/in/" + "" + "|" + ""
+a.linkedin = "https://www.linkedin.com/" + "404" + "|" + "http://demo.prod.free.fr/CernayAutomobile/images/photoInexistante.gif"
 a.save
 a = Finded.new
 a.name = "Sami_Himeur"
