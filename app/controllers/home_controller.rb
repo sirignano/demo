@@ -19,6 +19,7 @@ class HomeController < ApplicationController
 			a.name = t["name"]
 			a.save
 		end
+		render plain: "OK"
 	end
 end
 
