@@ -47,21 +47,6 @@
           <% count += 1 %>
         <% end %>
 </div>
-<div class="col-sm-4">
-        <% count = 0 %>
-        <% while count != @nbr %>
-            <div class="card profile-view">
-                            <div class="epc-item bgm-white">
-                                <div class="easy-pie main-pie" data-percent="88">
-                                    <div class="percent">88</div>
-                                    <div class="pie-title">De réussite</div>
-                                <canvas height="296" width="296" style="height: 148px; width: 148px;"></canvas></div>
-                            </div>
-             </div>
-          <% count += 1 %>
-        <% end %>
-</div>
-        
         <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
         <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
@@ -71,3 +56,28 @@
         <script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
         <script src="vendors/bower_components/autosize/dist/autosize.min.js"></script>
         <script src="vendors/bower_components/mediaelement/build/mediaelement-and-player.js"></script>
+
+<div class="col-sm-4">
+        <% count = 0 %>
+        <% while count != @nbr %>
+            <div class="card profile-view">
+                            <div class="epc-item bgm-white">
+                                <div class="easy-pie main-pie" id="pos<%=count%>" data-percent="<%= @pp[count][2] %>">
+                                    <div class="percent"><%= @pp[count][2] %></div>
+                                    <div class="pie-title">De réussite</div>
+                                <canvas height="296" width="296"></canvas></div>
+                            </div>
+             </div>
+             <script type="text/javascript">
+
+                $('#pos<%=count%>').easyPieChart({
+                          animate: @pp[count][2] * 100
+                      }).data('easyPieChart').update(@pp[count][2] * 100);
+
+
+              </script>
+          <% count += 1 %>
+        <% end %>
+</div>
+        
+
