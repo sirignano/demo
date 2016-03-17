@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 			@pp = []
 			k = 0
 			last.each do |o|
+				@pp[k] = []
 				begin
 					per = Finded.find_by! name: o.name
 					@category = o.category
@@ -12,7 +13,6 @@ class HomeController < ApplicationController
 					@linkedin = per.linkedin
 					@phone = per.phone
 					@picture = ""
-					@pp[k] = []
 					@pp[k][0] = 0
 					@pp[k][1] = @category
 					@pp[k][2] = @confidence
@@ -21,13 +21,13 @@ class HomeController < ApplicationController
 					@pp[k][5] = @phone
 					@pp[k][6] = @picture
 				rescue
-					@strs = "une personne non reconnu a été rencontré"
-					@pp[k] = []
 					@pp[k][0] = 1
 
 				end
 				k += 1
 			end
+			@str = "une erreur non reconnu a été rencontré"
+			@strs = "une personne non reconnu a été rencontré"
 			@nbr = k
 			@a = 1
 	end
