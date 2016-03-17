@@ -1,13 +1,12 @@
 class HomeController < ApplicationController
 	def index
-			last = Person.all
+			last = Person.all.order(created_at: :desc)
 			@pp = []
 			k = 0
 			last.each do |o|
 				@pp[k] = []
 				begin
 					per = Finded.find_by! name: o.name
-					per.order(created_at: :desc)
 					@category = o.category
 					@confidence = o.confidence
 					@name = o.name.tr("_", " ").upcase
