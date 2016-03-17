@@ -17,9 +17,9 @@ class HomeController < ApplicationController
 					@pp[k][1] = o.category
 					@pp[k][2] = o.confidence
 					@pp[k][3] = o.name.tr("_", " ").upcase
-					@pp[k][4] = per.linkedin
+					@pp[k][4] = per.linkedin.split('|')[0]
 					@pp[k][5] = per.phone
-					@pp[k][6] = "to_be_parsed"
+					@pp[k][6] = per.linkedin.split('|')[1]
 				rescue
 					@pp[k][0] = 1
 
