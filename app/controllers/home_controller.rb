@@ -98,7 +98,7 @@ class HomeController < ApplicationController
 
                                 <div class="pv-body">
                                     <h2>UNKNOWN</h2>
-                                    <small>une personne non reconnu a été rencontré%</small>
+                                    <small>une personne non reconnu a été rencontré</small>
 
                                     <ul class="pv-contact">
                                     </ul>
