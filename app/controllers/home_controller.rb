@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 			k = 0
 			last.each do |o|
 				begin
+					@pp[k] = []
 					per = Finded.find_by! name: o.name
 					@category = o.category
 					@confidence = o.confidence
@@ -21,6 +22,7 @@ class HomeController < ApplicationController
 					@pp[k]["a"] = 0
 				rescue
 					@strs = "une personne non reconnu a été rencontré"
+					@pp[k] = []
 					@pp[k]["a"] = 1
 
 					@a = 0
