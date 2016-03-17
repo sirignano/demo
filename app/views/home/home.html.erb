@@ -24,6 +24,8 @@
         var getinfo = function ()
         {
                 var datas = $.post("/getinfo", { id: "25" }).done( function (str) {
+
+                    document.getElementById("main").innerHTML = "";
                     var valstr = str.split("|");
                     for (j = 1; j < valstr.length; j++)
                     {

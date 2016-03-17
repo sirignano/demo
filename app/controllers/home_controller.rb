@@ -94,7 +94,7 @@ class HomeController < ApplicationController
 
                                 <div class="pv-body">
                                     <h2> '+@pp[k][3]+' </h2>
-                                    <small>Cette Personne a été reconnu avec un taux de '+@pp[count][2]+'%</small>
+                                    <small>Cette Personne a été reconnu avec un taux de '+@pp[k][2]+'%</small>
 
                                     <ul class="pv-contact">
                                         <li><i class="zmdi zmdi-pin"></i> '+@pp[k][1]+'      </li>
