@@ -14,12 +14,12 @@ class HomeController < ApplicationController
 					@phone = per.phone
 					@picture = ""
 					@pp[k][0] = 0
-					@pp[k][1] = @category
-					@pp[k][2] = @confidence
-					@pp[k][3] = @name
-					@pp[k][4] = @linkedin
-					@pp[k][5] = @phone
-					@pp[k][6] = @picture
+					@pp[k][1] = o.category
+					@pp[k][2] = o.confidence
+					@pp[k][3] = o.name.tr("_", " ").upcase
+					@pp[k][4] = per.linkedin
+					@pp[k][5] = per.phone
+					@pp[k][6] = "to_be_parsed"
 				rescue
 					@pp[k][0] = 1
 
