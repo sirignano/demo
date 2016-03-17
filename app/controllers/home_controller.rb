@@ -5,7 +5,6 @@ class HomeController < ApplicationController
 			k = 0
 			last.each do |o|
 				begin
-					@pp[k] = []
 					per = Finded.find_by! name: o.name
 					@category = o.category
 					@confidence = o.confidence
@@ -13,6 +12,7 @@ class HomeController < ApplicationController
 					@linkedin = per.linkedin
 					@phone = per.phone
 					@picture = ""
+					@pp[k] = []
 					@pp[k][0] = 0
 					@pp[k][1] = @category
 					@pp[k][2] = @confidence
@@ -25,11 +25,10 @@ class HomeController < ApplicationController
 					@pp[k] = []
 					@pp[k][0] = 1
 
-					@a = 0
 				end
 				k += 1
-				@nbr = k
 			end
+			@nbr = k
 			@a = 1
 	end
 
