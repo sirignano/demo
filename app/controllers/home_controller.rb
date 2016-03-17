@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
 	def index
-		begin
 			last = Person.all
 			@pp = []
 			k = 0
@@ -29,10 +28,6 @@ class HomeController < ApplicationController
 				k += 1
 			end
 			@a = 1
-		rescue
-			@str = "une erreur non reconnu a été rencontré"
-			@a = 0
-		end
 	end
 
 	def create
