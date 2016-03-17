@@ -35,6 +35,18 @@ class HomeController < ApplicationController
 	def home
 	end
 
+	def delete
+		begin
+			a = Person.all
+			a.each do |o|
+				o.delete
+			end
+		rescue
+			render plain: "KO" and return
+		end
+		render plain: "OK"
+	end
+
 	def getinfo
 			last = Person.all.order(created_at: :desc)
 			@pp = []

@@ -2,10 +2,11 @@ Gstp::Application.routes.draw do
   devise_for :users
   #devise_for :users
 
-  root 'home#index'
-  get '/' => 'home#index'
-  get '/index' => 'home#index'
+  root 'home#home'
+  get '/' => 'home#home'
+  get '/index' => 'home#hoome'
   post '/create' => 'home#create'
+  get '/delete' => 'home#delete'
   post '/getinfo' => 'home#getinfo'
   get '/test' => 'home#home'
   # The priority is based upon order of creation: first created -> highest priority.

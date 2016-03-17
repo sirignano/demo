@@ -8,11 +8,6 @@
 <div class="col-sm-3">
 </div>
         <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
-        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
-        <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-        <script src="vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
         <script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
         <script src="vendors/bower_components/autosize/dist/autosize.min.js"></script>
         <script src="vendors/bower_components/mediaelement/build/mediaelement-and-player.js"></script>
@@ -33,9 +28,10 @@
                     }
                 });
         }
+        getinfo();
         setInterval(function () {
             getinfo() // this will run after every 5 seconds
-        }, 1000);
+        }, 500);
 
 
 </script>
