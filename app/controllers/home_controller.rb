@@ -42,6 +42,7 @@ class HomeController < ApplicationController
 			render1 = ""
 			last.each do |o|
 				@pp[k] = []
+				begin
 					per = Finded.find_by! name: o.name
 					@category = o.category
 					@confidence = o.confidence
@@ -67,7 +68,6 @@ class HomeController < ApplicationController
 
                                     <ul class="pv-contact">
                                         <li><i class="zmdi zmdi-pin"></i> '+o.category+'      </li>
-                                        <li><i class="zmdi zmdi-phone"></i> '+per.phone+'       </li>
                                         <li><i class="zmdi zmdi-broken-image"></i> '+o.confidence+'      %</li>
                                     </ul>
                                     
@@ -77,7 +77,27 @@ class HomeController < ApplicationController
                                     
                                 </div>
                               </div>'
-				
+				rescue
+					@pp[k][0] = 1
+					render1 += '|'+'<div class="card profile-view">
+                                <div class="pv-header">
+                                    <img src="http://www.babelio.com/users/AVT_Unknown_340.gif" class="pv-main" alt="">
+                                </div>
+
+                                <div class="pv-body">
+                                    <h2>UNKNOWN</h2>
+                                    <small>une personne non reconnu a été rencontré%</small>
+
+                                    <ul class="pv-contact">
+                                    </ul>
+                                    
+                                    <ul class="pv-follow">
+                                    </ul>
+                                    
+                                </div>
+                              </div>'
+
+				end
 				k += 1
 			end
 			@str = "une erreur non reconnu a été rencontré"
