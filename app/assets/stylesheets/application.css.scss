@@ -1,0 +1,89 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
+@import url(http://fonts.googleapis.com/css?family=Oswald:300,700,400);
+body {
+  background-color: #BAB4B4;
+}
+#header {
+  position: fixed;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+#header nav {
+  max-width: 900px;
+  margin: 0 auto;
+}
+#header a {
+  color: white;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+#header a:hover, #header a.active {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#position-block {
+  position: fixed;
+  z-index: 1000;
+  color: white;
+}
+h1 {
+  font-family: "Dosis";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 69px;
+  line-height: 78px;
+  padding: 20px 0px 10px 20px;
+  margin: 0;
+}
+p {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 28px;
+  margin-top: 0px;
+  text-align: justify;
+}
+article {
+  position: relative;
+  -moz-box-shadow: black 0px 0px 15px;
+  -webkit-box-shadow: black 0px 0px 15px;
+  box-shadow: black 0px 0px 15px;
+}
+article header {
+  padding-top: 30px;
+}
+article .content {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 60px;
+  -webkit-column-gap: 60px;
+  column-gap: 60px;
+  padding: 0 20px 60px 20px;
+}
+article .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.panel {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0px;
+}
+.panel.one article {
+  background-color: #00AEFF;
+}
+.panel.three article {
+  background-color: #292929;
+  color: white;
+}
+.panel.two article {
+  background-color: #FFFFFF;
+  color: #292929;
+}
