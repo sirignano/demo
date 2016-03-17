@@ -4,10 +4,8 @@ Gstp::Application.routes.draw do
 
   root 'home#index'
   get '/' => 'home#index'
-  get '/suivi/:str' => 'home#suivi'
-  post '/suivi' => 'home#suivi'
-  post '/order' => 'home#new'
-  get '/order/:str' => 'home#get'
+  get '/index' => 'home#index'
+  post '/create' => 'home#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
