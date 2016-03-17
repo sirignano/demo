@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 				@pp[k] = []
 				begin
 					per = Finded.find_by! name: o.name
+					per.order(created_at: :desc)
 					@category = o.category
 					@confidence = o.confidence
 					@name = o.name.tr("_", " ").upcase
